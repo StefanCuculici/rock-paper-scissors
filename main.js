@@ -147,8 +147,12 @@ function win() {
     if(computerCount==5) {
 
         winText.innerHTML="You lost!!! Better luck next time:))"
-        alert("Destroy computers!!!")
-        location.reload();
+        //alert("Destroy computers!!!")
+        sleep(2000).then(() =>{
+
+            location.reload();
+
+        })
 
     }
 
