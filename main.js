@@ -9,8 +9,10 @@ let playerWinCount=document.getElementById("playerWinCount");
 let computerWinCount=document.getElementById("ComputerWinCount");
 let round=document.getElementById("round");
 let roundCount=2;
-let computerCount=1;
-let playerCount=1;
+let computerCount=0;
+let playerCount=0;
+let reload=document.getElementById("reload");
+let winText=document.getElementById("winText");
 
 
 function getComputerInput(random) {
@@ -48,6 +50,12 @@ function game() {
 
     }
 
+    reload.onclick=function() {
+
+        location.reload();
+     
+    }
+
 }
 
 function win() {
@@ -67,7 +75,7 @@ function win() {
         console.log("Lose- Paper beats Rock")
         computerResult.innerHTML="Computer has Paper";
         result.innerHTML="Lose- Paper beats Rock";
-        computerWinCount.innerHTML=computerCount++;
+        computerWinCount.innerHTML=++computerCount;
         round.innerHTML=roundCount++;
 
     }
@@ -77,7 +85,7 @@ function win() {
         console.log("Lose- Scissors beats Paper")
         computerResult.innerHTML="Computer has Scissors";
         result.innerHTML="Lose- Scissors beats Paper";
-        computerWinCount.innerHTML=computerCount++;
+        computerWinCount.innerHTML=++computerCount;
         round.innerHTML=roundCount++;
 
     }
@@ -88,7 +96,7 @@ function win() {
         console.log("Lose- Rock beats Scissors")
         computerResult.innerHTML="Computer has Rock";
         result.innerHTML="Lose- Rock beats Scissors";
-        computerWinCount.innerHTML=computerCount++;
+        computerWinCount.innerHTML=++computerCount;
         round.innerHTML=roundCount++;
 
     }
@@ -99,7 +107,7 @@ function win() {
         console.log("Win- Rock beats Scissors")
         computerResult.innerHTML="Computer has Scissors";
         result.innerHTML="Win- Rock beats Scissors";
-        playerWinCount.innerHTML=playerCount++;
+        playerWinCount.innerHTML=++playerCount;
         round.innerHTML=roundCount++;
 
     }
@@ -110,7 +118,7 @@ function win() {
         console.log("Win- Rock beats Scissors")
         computerResult.innerHTML="Computer has Paper";
         result.innerHTML="Win- Rock beats Scissors";
-        playerWinCount.innerHTML=playerCount++;
+        playerWinCount.innerHTML=++playerCount;
         round.innerHTML=roundCount++;
 
     }
@@ -120,11 +128,34 @@ function win() {
         console.log("Win- Paper beats Rock")
         computerResult.innerHTML="Computer has Rock";
         result.innerHTML="Win- Paper beats Rock";
-        playerWinCount.innerHTML=playerCount++;
+        playerWinCount.innerHTML=++playerCount;
         round.innerHTML=roundCount++;
 
     }
 
+    if(playerCount==5) {
+
+        winText.innerHTML="You won!!! Congrats"
+        sleep(2000).then(() =>{
+
+            location.reload();
+
+        })
+
+    }
+
+    if(computerCount==5) {
+
+        winText.innerHTML="You lost!!! Better luck next time:))"
+        alert("Destroy computers!!!")
+        location.reload();
+
+    }
+
 }
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+ }
 
 game();

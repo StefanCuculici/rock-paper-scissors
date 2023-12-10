@@ -31,3 +31,13 @@ body {
   font-size: 30px;
   margin: 30px;
 }
+
+#winText {
+  font-size: 30px;
+  text-align: center;
+  margin: 30px;
+}
+
+#reload {
+  padding: 10px;
+}
