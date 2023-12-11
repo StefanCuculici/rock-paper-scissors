@@ -69,7 +69,7 @@ body {
 
 @media (max-width: 768px) {
   main button svg {
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
   }
 }
