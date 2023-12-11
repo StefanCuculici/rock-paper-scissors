@@ -13,6 +13,8 @@ let computerCount=0;
 let playerCount=0;
 let reload=document.getElementById("reload");
 let winText=document.getElementById("winText");
+let darkMode=document.body;
+let toggleBtn=document.getElementById("darkMode");
 
 
 function getComputerInput(random) {
@@ -50,15 +52,7 @@ function game() {
 
     }
 
-    reload.onclick=function() {
 
-        sleep(1000).then(() =>{
-
-            location.reload();
-
-        })
-     
-    }
 
 }
 
@@ -140,23 +134,14 @@ function win() {
     if(playerCount==5) {
 
         winText.innerHTML="You won!!! Congrats"
-        sleep(2000).then(() =>{
-
-            location.reload();
-
-        })
-
+        reloadPage();
     }
 
     if(computerCount==5) {
 
         winText.innerHTML="You lost!!! Better luck next time:))"
         //alert("Destroy computers!!!")
-        sleep(2000).then(() =>{
-
-            location.reload();
-
-        })
+        reloadPage();
 
     }
 
@@ -168,23 +153,40 @@ function sleep(ms) {
 
  }
 
-
-let darkMode=document.body;
-let toggleBtn=document.getElementById("darkMode");
-
-function ceva() {
+function DarkModeToggle() {
 
     darkMode.classList.toggle("dark-mode");
+    themePreference(darkMode.classList.contains("dark-mode"));
 
 }
 
+function themePreference(isDarkMode) {
 
-// toggleBtn.onclick = function () {
+    localStorage.setItem('darkMode', isDarkMode);
 
-//     darkMode.classList.toggle("dark-mode");
+}
 
-// }
+function applyPreference() {
+
+    const isDarkMode=localStorage.getItem('darkMode') === 'true';
+    if(isDarkMode) {
+
+        darkMode.classList.add("dark-mode");
+
+    }
+
+}
+
+function reloadPage() {
+
+    sleep(1000).then(() =>{
+
+        location.reload();
 
 
+    })
 
+}
+
+applyPreference();
 game();
