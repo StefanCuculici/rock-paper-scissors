@@ -52,7 +52,11 @@ function game() {
 
     reload.onclick=function() {
 
-        location.reload();
+        sleep(1000).then(() =>{
+
+            location.reload();
+
+        })
      
     }
 
@@ -159,7 +163,28 @@ function win() {
 }
 
 function sleep(ms) {
+
     return new Promise(resolve => setTimeout(resolve, ms));
+
  }
+
+
+let darkMode=document.body;
+let toggleBtn=document.getElementById("darkMode");
+
+function ceva() {
+
+    darkMode.classList.toggle("dark-mode");
+
+}
+
+
+// toggleBtn.onclick = function () {
+
+//     darkMode.classList.toggle("dark-mode");
+
+// }
+
+
 
 game();

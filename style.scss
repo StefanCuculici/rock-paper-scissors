@@ -22,12 +22,22 @@ body {
     align-items: center;
     flex-direction: column;
     width:100vh;
-    height:75vh;
+    height:60vh;
 
     button {
 
         padding:20px;
         margin:10px;
+        background: transparent;
+        border:none;
+
+        svg:hover {
+
+            transition: 0.5s ease;
+            transform:scale(1.05);
+            margin:0 0 20px 0;
+
+        }
 
     }
 
@@ -57,5 +67,30 @@ margin:30px;
 #reload {
 
     padding:10px;
+    background: transparent;
+    border:0;
+
+    svg:hover {
+
+        transform: rotate(360deg);
+        transition: 1s ease;
+
+    }
+
+}
+
+#darkMode {
+
+    border:0;
+    background: transparent;
+    padding:20px;
+    margin-left:auto;
+}
+
+.dark-mode {
+
+    background-color: black;
+    color:white;
+    fill:white;
 
 }
