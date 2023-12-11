@@ -26,7 +26,7 @@ body {
 
     button {
 
-        padding:20px;
+        padding:10px;
         background: transparent;
         border:none;
 
@@ -42,7 +42,7 @@ body {
 
     p {
 
-        padding:10px;
+        padding:5px;
 
     }
 
@@ -65,7 +65,6 @@ margin:30px;
 
 #reload {
 
-    padding:10px;
     background: transparent;
     border:0;
 
@@ -82,7 +81,7 @@ margin:30px;
 
     border:0;
     background: transparent;
-    padding:20px;
+    margin:10px;
     margin-left:auto;
 }
 
@@ -98,10 +97,12 @@ margin:30px;
 
     main button {
 
+        padding:0;
+
         svg {
 
-            width:50px;
-            height: 50px;;
+            width:30px;
+            height: 30px;
 
         }
 
