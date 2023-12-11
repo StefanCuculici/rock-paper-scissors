@@ -66,3 +66,10 @@ body {
   color: white;
   fill: white;
 }
+
+@media (max-width: 768px) {
+  main button svg {
+    width: 70px;
+    height: 70px;
+  }
+}
